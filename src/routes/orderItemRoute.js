@@ -9,7 +9,7 @@ const { requireRole } = require("../middleware/roleCheck");
 router.post("/", verifyToken, requireRole([2]), controller.addItem);
 
 // GET: Melihat detail Item
-// Admin (1) dan Kasir (2) boleh melihat
-router.get("/", verifyToken, requireRole([1, 2]), controller.getItems);
+// Admin (1) dan owner (3) boleh melihat
+router.get("/", verifyToken, requireRole([1, 3]), controller.getItems);
 
 module.exports = router;

@@ -10,6 +10,6 @@ router.post("/", verifyToken, requireRole([2]), controller.createOrder);
 
 // GET: Melihat Data Order
 // Admin (1) dan Kasir (2) boleh melihat
-router.get("/", verifyToken, requireRole([1, 2]), controller.getOrders);
+router.get("/", verifyToken, requireRole([1, 3]), controller.getOrders);
 
 module.exports = router;
